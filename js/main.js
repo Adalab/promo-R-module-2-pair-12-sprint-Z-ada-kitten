@@ -6,53 +6,43 @@ form.classList.remove("collapsed");
 
 const list = document.querySelector(".js-list");
 
+const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
+const kittenOneName = 'Anastacio';
+const kittenOneDesc = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
+const kittenOneRace = 'British Shorthair';
+
 const kittenOne = `<li class="card">
 <article>
   <img
     class="card_img"
-    src="https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg"
+    src="${kittenOneImage}"
     alt="gatito"
   />
-  <h3 class="card_title">Anastacio</h3>
-  <h4 class="card_race">British Shorthair</h4>
+  <h3 class="card_title">${kittenOneName}</h3>
+  <h4 class="card_race">${kittenOneRace}</h4>
   <p class="card_description">
-    Ruiseño, juguetón, le guta estar tranquilo y que nadie le
-    moleste. Es una maravilla acariciarle!
+    ${kittenOneDesc}
   </p>
 </article>
 </li>`;
 
-// const kittenImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
-// const kittenName = ${kittenName};
-// const kittenDesc =
-//   'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
-// const kittenRace = 'British Shorthair';
-
-// const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
-// const kittenOneName = 'Anastacio';
-// const kittenOneDesc =
-//   'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
-// const kittenOneRace = 'British Shorthair';
+const kittenTwoImage = 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg';
+const kittenTwoName = 'Fiona';
+const kittenTwoDesc = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
+const kittenTwoRace = 'British Shorthair';
 
 const kittenTwo = `<li class="card">
 <img
   class="card_img"
-  src="https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg"
+  src="${kittenTwoImage}"
   alt="gatito"
 />
-<h3 class="card_title">Fiona</h3>
-<h4 class="card_race">British Shorthair</h4>
+<h3 class="card_title">${kittenTwoName}</h3>
+<h4 class="card_race">${kittenTwoRace}</h4>
 <p class="card_description">
-  Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste.
-  Es una maravilla acariciarle!
+  ${kittenTwoDesc}
 </p>
 </li>`;
-
-// const kittenTwoImage = 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg';
-// const kittenTwoName = 'Fiona';
-// const kittenTwoDesc =
-//   'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
-// const kittenTwoRace = 'British Shorthair';
 
 const kittenThree = `<li class="card">
 <img
