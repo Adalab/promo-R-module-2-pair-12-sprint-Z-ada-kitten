@@ -1,9 +1,29 @@
 'use strict';
-const input_search_desc = document.querySelector('.js_in_search_desc');
-input_search_desc.value = 'cariñoso';
-const descrSearchText = input_search_desc.value;
+const inputSearchDesc = document.querySelector('.js_in_search_desc');
+const inputSearchRace = document.querySelector('.js_in_search_race');
+const btnSearch = document.querySelector(".js-btn_search");
+const labelMesageError2 = document.querySelector('.js-label-error2');
+
+// input_search_desc.value = 'cariñoso';
+// const descrSearchText = input_search_desc.value;
 
 const list = document.querySelector(".js-list");
+const btnAdd = document.querySelector(".js-btn-add");
+
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMesageError = document.querySelector('.js-label-error');
+
+btnSearch.addEventListener('click', (event) =>{
+  event.preventDefault();
+  const valueSearchDesc = inputSearchDesc.value;
+  const valueSearchRace = inputSearchRace.value;
+  if (valueSearchDesc === '' || valueSearchRace === '') {
+    labelMesageError2.innerHTML="Debe rellenar todos los valores"
+  } else {
+  }
+});
 
 const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
 const kittenOneName = 'Anastacio';
@@ -11,19 +31,26 @@ const kittenOneDesc = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie 
 const kittenOneRace = 'British Shorthair';
 const openForm = document.querySelector('.js-openform')
 
- const form = document.querySelector('.js-new-form');
- openForm.addEventListener('click', (event) =>{
+const form = document.querySelector('.js-new-form');
+openForm.addEventListener('click', (event) =>{
+event.preventDefault();
+if (form.classList.contains('collapsed')) {
+  form.classList.remove('collapsed');
+} else {
+  form.classList.add("collapsed");
+}
+});
+
+btnAdd.addEventListener('click', (event) =>{
   event.preventDefault();
-  if (form.classList.contains('collapsed')) {
-    form.classList.remove('collapsed');
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMesageError.innerHTML="Debe rellenar todos los valores"
   } else {
-    form.classList.add("collapsed");
   }
- });
-
- 
-
-
+});
 
 
 const kittenOne = `<li class="card">
