@@ -80,3 +80,13 @@ if( kittenThreeDesc.includes(descrSearchText) ) {
 }
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
+
+
+// EVENTOS
+
+const icon = document.querySelector('.js-icon-plus');
+
+// listener sobre el elemento, con tipo de evento y el código a ejecutarse
+icon.addEventListener('click', () => {
+  console.log('Alerta'); //código a ejecutarse
+});
