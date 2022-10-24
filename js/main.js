@@ -1,10 +1,4 @@
 'use strict';
-
-// const form = document.querySelector('.js-new-form');
-
-// form.classList.remove("collapsed");
-
-
 const input_search_desc = document.querySelector('.js_in_search_desc');
 input_search_desc.value = 'cariñoso';
 const descrSearchText = input_search_desc.value;
@@ -15,6 +9,22 @@ const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
 const kittenOneName = 'Anastacio';
 const kittenOneDesc = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
 const kittenOneRace = 'British Shorthair';
+const openForm = document.querySelector('.js-openform')
+
+ const form = document.querySelector('.js-new-form');
+ openForm.addEventListener('click', (event) =>{
+  event.preventDefault();
+  if (form.classList.contains('collapsed')) {
+    form.classList.remove('collapsed');
+  } else {
+    form.classList.add("collapsed");
+  }
+ });
+
+ 
+
+
+
 
 const kittenOne = `<li class="card">
 <article>
