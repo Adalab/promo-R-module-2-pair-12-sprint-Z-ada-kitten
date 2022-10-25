@@ -3,6 +3,7 @@ const inputSearchDesc = document.querySelector('.js_in_search_desc');
 const inputSearchRace = document.querySelector('.js_in_search_race');
 const btnSearch = document.querySelector(".js-btn_search");
 const labelMesageError2 = document.querySelector('.js-label-error2');
+const icon = document.querySelector('.js-icon-plus');
 
 // input_search_desc.value = 'cariñoso';
 // const descrSearchText = input_search_desc.value;
@@ -25,6 +26,22 @@ btnSearch.addEventListener('click', (event) =>{
   }
 });
 
+function showNewCatForm() {
+  form.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  form.classList.add('collapsed');
+}
+
+//IF PERO SIN LLAMAR A LAS FUNCIONES
+icon.addEventListener("click", (event) =>{
+  if (form.classList.contains('collapsed')) {
+    form.classList.remove('collapsed');
+    } else {
+    form.classList.add("collapsed");
+    }
+});
+
 const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
 const kittenOneName = 'Anastacio';
 const kittenOneDesc = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
@@ -34,11 +51,11 @@ const openForm = document.querySelector('.js-openform')
 const form = document.querySelector('.js-new-form');
 openForm.addEventListener('click', (event) =>{
 event.preventDefault();
-if (form.classList.contains('collapsed')) {
-  form.classList.remove('collapsed');
-} else {
+  if (form.classList.contains('collapsed')) {
+   form.classList.remove('collapsed');
+  } else {
   form.classList.add("collapsed");
-}
+  }
 });
 
 btnAdd.addEventListener('click', (event) =>{
@@ -117,13 +134,3 @@ if( kittenThreeDesc.includes(descrSearchText) ) {
 }
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
-
-
-// EVENTOS
-
-const icon = document.querySelector('.js-icon-plus');
-
-// listener sobre el elemento, con tipo de evento y el código a ejecutarse
-icon.addEventListener('click', () => {
-  console.log('Alerta'); //código a ejecutarse
-});
