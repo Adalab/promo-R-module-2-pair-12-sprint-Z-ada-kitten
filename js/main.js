@@ -3,8 +3,6 @@
 // 1- QUERYSELECTOR
 
 const icon = document.querySelector('.js-icon-plus');
-const openForm = document.querySelector('.js-openform');
-// Estos dos querySelector son para la misma etiqueta - QUITAR UNO
 
 //Form - ¿Agregamos un nuevo gatito a Adalab?
 const form = document.querySelector('.js-new-form');
@@ -95,27 +93,32 @@ function hideNewCatForm() {
   form.classList.add('collapsed');
 }
 
+function renderKitten(url, desc, name, race) {
+  return `<li class="card">
+  <article>
+    <img
+      class="card_img"
+      src="${kittenImage}"
+      alt="gatito"
+    />
+    <h3 class="card_title">${kittenName}</h3>
+    <h4 class="card_race">${kittenRace}</h4>
+    <p class="card_description">${kittenDesc}</p>
+  </article>
+  </li>`;
+}
+
+
 
 // 4 - ADDEVENTLISTENER
 
-//If pero sin llamar a las funciones => NOS QUEDAMOS POR AQUÍ 25/10
 icon.addEventListener("click", (event) =>{
-  if (form.classList.contains('collapsed')) {
-    form.classList.remove('collapsed');
+   if (form.classList.contains('collapsed')) {
+    showNewCatForm();   //  form.classList.remove('collapsed');
     } else {
-    form.classList.add("collapsed");
+    hideNewCatForm();
     }
 });
-
-openForm.addEventListener('click', (event) =>{
-  event.preventDefault();
-  if (form.classList.contains('collapsed')) {
-     form.classList.remove('collapsed');
-  } else {
-    form.classList.add("collapsed");
-  }
-});
-//VOLVEMOS A TENER LA MISMA ETIQUETA 2 VECES, LLAMADA CON ADDEVENTLISTENER 2 VECES
 
 btnAdd.addEventListener('click', (event) =>{
   event.preventDefault();
