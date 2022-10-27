@@ -11,6 +11,7 @@ const inputName = document.querySelector('.js-input-name');
 const inputDesc = document.querySelector('.js-input-desc');
 const labelMesageError = document.querySelector('.js-label-error');
 const btnAdd = document.querySelector(".js-btn-add");
+const btnCancel = document.querySelector(".js-btn-cancel");
 
 //Form - Filtrar/Buscar
 const inputSearchDesc = document.querySelector('.js_input_search_desc');
@@ -26,7 +27,7 @@ const list = document.querySelector(".js-list");
 
 const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
 const kittenOneName = 'Anastacio';
-const kittenOneDesc = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
+const kittenOneDesc = 'Adalaber  Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
 const kittenOneRace = 'British Shorthair';
 
 const kittenTwoImage = 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg';
@@ -80,7 +81,7 @@ const kittenThree = `<li class="card">
 </p>
 </li>`;
 
-list.innerHTML = kittenOne + kittenTwo + kittenThree;
+// list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 
 // 3 - FUNCIONES
@@ -108,7 +109,38 @@ function renderKitten(url, desc, name, race) {
   </li>`;
 }
 
+function addNewKitten(event) {
+  event.preventDefault();
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMesageError.innerHTML="Debe rellenar todos los valores"
+  } else {
+  }
+}
 
+function cancelNewKitten(event) {
+  event.preventDefault();
+  inputPhoto.value = "";
+  inputDesc.value = "";
+  inputName.value = "";
+}
+
+function filterKitten(event) {
+  event.preventDefault();
+  const valueSearchDesc = inputSearchDesc.value;
+  const valueSearchRace = inputSearchRace.value;
+  if (kittenOneDesc.includes(valueSearchDesc)) {
+    list.innerHTML += kittenOne;
+  }
+  if (kittenTwoDesc.includes(valueSearchDesc)) {
+    list.innerHTML += kittenTwo;
+  }
+  if (kittenThreeDesc.includes(valueSearchDesc)) {
+    list.innerHTML += kittenThree;
+  }
+}
 
 // 4 - ADDEVENTLISTENER
 
@@ -120,26 +152,21 @@ icon.addEventListener("click", (event) =>{
     }
 });
 
-btnAdd.addEventListener('click', (event) =>{
-  event.preventDefault();
-  const valueDesc = inputDesc.value;
-  const valuePhoto = inputPhoto.value;
-  const valueName = inputName.value;
-  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMesageError.innerHTML="Debe rellenar todos los valores"
-  } else {
-  }
-});
+btnAdd.addEventListener('click', addNewKitten);
 
-btnSearch.addEventListener('click', (event) =>{
-  event.preventDefault();
-  const valueSearchDesc = inputSearchDesc.value;
-  const valueSearchRace = inputSearchRace.value;
-  if (valueSearchDesc === '' || valueSearchRace === '') {
-    labelMesageError2.innerHTML="Debe rellenar todos los valores"
-  } else {
-  }
-});
+// btnSearch.addEventListener('click', (event) =>{
+//   event.preventDefault();
+//   const valueSearchDesc = inputSearchDesc.value;
+//   const valueSearchRace = inputSearchRace.value;
+//   if (valueSearchDesc === '' || valueSearchRace === '') {
+//     labelMesageError2.innerHTML="Debe rellenar todos los valores"
+//   } else {
+//   }
+// });
+
+btnCancel.addEventListener ('click', cancelNewKitten);
+
+btnSearch.addEventListener ('click', filterKitten);
 
 // input_search_desc.value = 'cariñoso'; //Esto sigue dando Error y no sé si va aquí
 // const descrSearchText = input_search_desc.value;
