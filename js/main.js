@@ -130,7 +130,6 @@ function cancelNewKitten(event) {
 function filterKitten(event) {
   event.preventDefault();
   const valueSearchDesc = inputSearchDesc.value;
-  const valueSearchRace = inputSearchRace.value;
   if (kittenOneDesc.includes(valueSearchDesc)) {
     list.innerHTML += kittenOne;
   }
@@ -141,6 +140,17 @@ function filterKitten(event) {
     list.innerHTML += kittenThree;
   }
 }
+
+//Estamos en el ejercicio 3 de 2.6 Funciones II
+
+/*onst valueSearchRace = inputSearchRace.value;
+
+function renderRace(valueSearchRace) {
+  
+    //return ´<p class="card_race">No se ha especificado la raza</p>´
+    console.log ('hola');
+  }*/
+
 
 // 4 - ADDEVENTLISTENER
 
